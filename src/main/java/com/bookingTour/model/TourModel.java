@@ -1,22 +1,27 @@
-package com.bookingTour.entity;
+package com.bookingTour.model;
 
-import java.util.List;
+import java.sql.Timestamp;
 
-public class Tour extends BaseEntity {
+public class TourModel extends BaseModel {
 
     private Long id;
+    private Long categoryId;
     private String name;
     private String description;
-    private Long categoryId;
-    private Category category;
     private Double averageRate;
-    private List<TourDetail> tourDetails;
-    private List<Rating> ratings;
-    private List<Review> reviews;
+    private Timestamp createdTime;
+    private CategoryModel category;
     private Integer capacity;
     private String startPoint;
     private Integer expectedDurationMin;
     private Integer expectedDurationMax;
+
+    public TourModel(){
+    }
+
+    public TourModel(Long id){
+        this.id = id;
+    }
 
     public Long getId() {
         return id;
@@ -24,6 +29,14 @@ public class Tour extends BaseEntity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getName() {
@@ -42,22 +55,6 @@ public class Tour extends BaseEntity {
         this.description = description;
     }
 
-    public Long getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
     public Double getAverageRate() {
         return averageRate;
     }
@@ -66,28 +63,20 @@ public class Tour extends BaseEntity {
         this.averageRate = averageRate;
     }
 
-    public List<TourDetail> getTourDetails() {
-        return tourDetails;
+    public Timestamp getCreatedTime() {
+        return createdTime;
     }
 
-    public void setTourDetails(List<TourDetail> tourDetails) {
-        this.tourDetails = tourDetails;
+    public void setCreatedTime(Timestamp createdTime) {
+        this.createdTime = createdTime;
     }
 
-    public List<Rating> getRatings() {
-        return ratings;
+    public CategoryModel getCategory() {
+        return category;
     }
 
-    public void setRatings(List<Rating> ratings) {
-        this.ratings = ratings;
-    }
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
+    public void setCategory(CategoryModel category) {
+        this.category = category;
     }
 
     public Integer getCapacity() {

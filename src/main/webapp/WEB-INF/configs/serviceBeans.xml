@@ -4,4 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
+    <bean id="tourService" class="com.bookingTour.service.imp.TourServiceImp">
+        <property name="tourDAO" ref="tourDAO" />
+    </bean>
+
+    <bean id="categoryService" class="com.bookingTour.service.imp.CategoryServiceImp">
+        <property name="categoryDAO" ref="categoryDAO" />
+    </bean>
+
 </beans>

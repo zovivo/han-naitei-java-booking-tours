@@ -7,7 +7,7 @@
 
     <bean id="templateResolver"
           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/views/user/"/>
+        <property name="prefix" value="/views/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML5"/>
         <property name="cacheable" value="false"/>
