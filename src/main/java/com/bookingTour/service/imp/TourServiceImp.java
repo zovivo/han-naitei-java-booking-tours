@@ -187,7 +187,7 @@ public class TourServiceImp implements TourService {
     private String buildQuery(TourInfo condition){
         String query = " from Tour t where 1=1 ";
         if (condition.getCategoryId() != null)
-            query += " and t.categoryId = :categoryId ";
+            query += " and t.category.id = :categoryId ";
         if (condition.getName() != null && !condition.getName().isEmpty())
             query += " and t.name = :name ";
         if (condition.getAverageRate()!= null)
