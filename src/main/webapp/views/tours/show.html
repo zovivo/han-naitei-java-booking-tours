@@ -4,7 +4,7 @@
 	xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security5"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<title>Detail Tour</title>
+<title th:text="#{title.tours.details}">Tour Details</title>
 </head>
 <body>
 	<th:block th:if="${tour}">
@@ -13,10 +13,9 @@
 		<div class="container h-100">
 			<div class="row h-100 align-items-end">
 				<div class="col-12">
-					<div
-							class="breadcrumb-content d-flex align-items-center justify-content-between pb-5">
-						<h2 class="room-title" th:text="${tour.name}">Phu Quoc - Hon Thom Natural Park</h2>
-						<h2 class="room-price" th:text="${tour.category.name}">Family Tour</h2>
+					<div class="breadcrumb-content d-flex align-items-center justify-content-between pb-5">
+						<h2 class="room-title" th:text="${tour.name}"></h2>
+						<h2 class="room-price" th:text="${tour.category.name}"></h2>
 					</div>
 				</div>
 			</div>
@@ -90,7 +89,7 @@
 								Capacity: <span>Max person [[${tour.capacity}]]</span>
 							</h6>
 							<h6>
-								Starting Gate: <span>[[${tour.startPoint}]]</span>
+								Start Point: <span>[[${tour.startPoint}]]</span>
 							</h6>
 						</div>
 
@@ -218,7 +217,7 @@
 												Capacity: <span>Max person [[${tour.capacity}]]</span>
 											</h6>
 											<h6>
-												Starting Point: <span>[[${tour.startPoint}]]</span>
+												Start Point: <span>[[${tour.startPoint}]]</span>
 											</h6>
 											<h6>
 												Services: <span>Wifi, television ...</span>
@@ -228,6 +227,8 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<button type="submit" class="btn roberto-btn w-100"
+										th:text="#{tour.book}">Book Now
 								<button type="submit" class="btn roberto-btn w-100">
 									<span sec:authorize="!hasAuthority('ADMIN')">Book Now</span>
 									<span sec:authorize="hasAuthority('ADMIN')">List Detail</span>
